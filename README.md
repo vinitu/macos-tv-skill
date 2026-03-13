@@ -5,6 +5,12 @@ A skill for macOS TV.app integration via AppleScript.
 ## Installation
 
 ```bash
+npx skills add vinitu/macos-tv-skill
+```
+
+Or with [skills.sh](https://skills.sh):
+
+```bash
 skills.sh add vinitu/macos-tv-skill
 ```
 
@@ -24,10 +30,15 @@ skills.sh add vinitu/macos-tv-skill
 
 ## How To Use
 
+From the skill directory (or path where scripts are installed):
+
 ```bash
-osascript -e 'tell application "TV" to play'
-osascript -e 'tell application "TV" to get name of current track'
-osascript -e 'tell application "TV" to search playlist "Library" for "Inception"'
+# Start playback (last or selected content)
+osascript scripts/playback/play.applescript
+# Current track title and metadata
+osascript scripts/track/current.applescript
+# Search library for "Inception"
+osascript scripts/track/search.applescript "Library" "Inception"
 ```
 
-See `SKILL.md` for the full command reference.
+See `SKILL.md` for the full AppleScript reference and all scripts under `scripts/`.
