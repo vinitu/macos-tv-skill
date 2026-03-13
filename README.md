@@ -1,11 +1,11 @@
-# Apple TV Skill
+# macOS TV Skill
 
-A skill for Apple TV.app integration on macOS via AppleScript.
+A skill for macOS TV.app integration via AppleScript.
 
 ## Installation
 
 ```bash
-skills.sh add vinitu/apple-tv-skill
+skills.sh add vinitu/macos-tv-skill
 ```
 
 ## Scope

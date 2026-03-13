@@ -1,9 +1,9 @@
 ---
-name: apple-tv
+name: macos-tv
 description: Apple TV.app integration on macOS for AI agents via AppleScript. Control playback, browse movies and TV shows, manage playlists, and configure AirPlay output.
 ---
 
-# Apple TV Skill
+# macOS TV Skill
 
 Control and query Apple TV.app on macOS using AppleScript (`osascript`).
 
