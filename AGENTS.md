@@ -22,7 +22,8 @@ This repo stores a skill for macOS TV.app integration.
 - `scripts/application/current-playlist.applescript`, `current-stream-title.applescript`, `current-stream-URL.applescript`.
 - `tests/dictionary_contract.sh`: contract test against TV.app scripting dictionary.
 - `tests/smoke_tv.sh`: smoke test for script layer (skips when TV.app not available).
-- `.github/workflows/ci-pr.yml`, `ci-main.yml`: CI on PR and push to main.
+- `.github/workflows/ci-pr.yml`: PR validation, auto-merge, version bump, tag, and release flow.
+- `.github/workflows/ci-main.yml`: main-branch validation, patch tag, and release flow.
 
 ## Validation
 
