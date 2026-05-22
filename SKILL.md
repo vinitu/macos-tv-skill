@@ -21,11 +21,23 @@ Do not call `scripts/applescripts` directly.
 
 Run commands from `scripts/commands`:
 
+- `scripts/commands/application/*`
 - `scripts/commands/library/*`
+- `scripts/commands/mute/*`
+- `scripts/commands/playback/*`
 - `scripts/commands/playlist/*`
 - `scripts/commands/track/*`
+- `scripts/commands/volume/*`
 
 ## Commands
+
+### Application
+
+```bash
+scripts/commands/application/current-playlist.sh
+scripts/commands/application/current-stream-URL.sh
+scripts/commands/application/current-stream-title.sh
+```
 
 ### Library
 
@@ -33,6 +45,27 @@ Run commands from `scripts/commands`:
 scripts/commands/library/add-files.sh
 scripts/commands/library/movies.sh
 scripts/commands/library/tv-shows.sh
+```
+
+### Mute
+
+```bash
+scripts/commands/mute/set.sh
+```
+
+### Playback
+
+```bash
+scripts/commands/playback/back-track.sh
+scripts/commands/playback/fast-forward.sh
+scripts/commands/playback/next.sh
+scripts/commands/playback/pause.sh
+scripts/commands/playback/play.sh
+scripts/commands/playback/previous.sh
+scripts/commands/playback/resume.sh
+scripts/commands/playback/rewind.sh
+scripts/commands/playback/seek.sh
+scripts/commands/playback/state.sh
 ```
 
 ### Playlist
@@ -48,6 +81,38 @@ scripts/commands/track/current.sh
 scripts/commands/track/reveal.sh
 scripts/commands/track/search.sh
 ```
+
+### Volume
+
+```bash
+scripts/commands/volume/get.sh
+scripts/commands/volume/set.sh
+```
+
+## JSON Contract
+
+Track object:
+
+- `name` (string)
+- `artist` (string)
+- `album` (string)
+- `duration` (number, seconds)
+
+Playlist object:
+
+- `name` (string)
+
+Volume envelope:
+
+- `{"volume": N}` where N is 0–100
+
+State envelope:
+
+- `{"state": "playing"|"paused"|"stopped"}`
+
+Scalar envelopes:
+
+- `success/failure`: `{"success": true/false, "error": "..."}`
 
 ## Safety Boundaries
 
