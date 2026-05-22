@@ -1,6 +1,9 @@
 # macOS TV Skill
 
-A skill for macOS TV.app integration via AppleScript.
+This repo stores an AI agent skill for Apple TV.app on macOS.
+
+The public interface is `scripts/commands`.
+`scripts/applescripts` stores internal AppleScript backends and dictionary-aligned coverage.
 
 ## Installation
 
@@ -14,31 +17,46 @@ Or with [skills.sh](https://skills.sh):
 skills.sh add vinitu/macos-tv-skill
 ```
 
-## Scope
-
-- Playback controls (play, pause, stop, seek, next/previous)
-- Browse library (movies, TV shows, music videos)
-- Search by name, genre, artist
-- Manage playlists
-- AirPlay device selection
-- Track metadata reading
-
 ## Prerequisites
 
 - macOS with TV.app
-- Automation permission for Terminal
+- Automation permission granted to your terminal app
 
-## How To Use
+## Public Interface
 
-From the skill directory (or path where scripts are installed):
+Run skill actions with:
 
 ```bash
-# Start playback (last or selected content)
-osascript scripts/playback/play.applescript
-# Current track title and metadata
-osascript scripts/track/current.applescript
-# Search library for "Inception"
-osascript scripts/track/search.applescript "Library" "Inception"
+scripts/commands/<entity>/<action>.sh [args...]
 ```
 
-See `SKILL.md` for the full AppleScript reference and all scripts under `scripts/`.
+## Backend Map
+
+- `scripts/commands/library/*` → AppleScript in `scripts/applescripts/library/*`
+- `scripts/commands/playlist/*` → AppleScript in `scripts/applescripts/playlist/*`
+- `scripts/commands/track/*` → AppleScript in `scripts/applescripts/track/*`
+
+## Command Surface
+
+Library:
+
+- `scripts/commands/library/add-files.sh`
+- `scripts/commands/library/movies.sh`
+- `scripts/commands/library/tv-shows.sh`
+
+Playlist:
+
+- `scripts/commands/playlist/list.sh`
+
+Track:
+
+- `scripts/commands/track/current.sh`
+- `scripts/commands/track/reveal.sh`
+- `scripts/commands/track/search.sh`
+
+## Validation
+
+```bash
+make compile
+make test
+```
