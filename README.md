@@ -32,17 +32,44 @@ scripts/commands/<entity>/<action>.sh [args...]
 
 ## Backend Map
 
+- `scripts/commands/application/*` → AppleScript in `scripts/applescripts/application/*`
 - `scripts/commands/library/*` → AppleScript in `scripts/applescripts/library/*`
+- `scripts/commands/mute/*` → AppleScript in `scripts/applescripts/mute/*`
+- `scripts/commands/playback/*` → AppleScript in `scripts/applescripts/playback/*`
 - `scripts/commands/playlist/*` → AppleScript in `scripts/applescripts/playlist/*`
 - `scripts/commands/track/*` → AppleScript in `scripts/applescripts/track/*`
+- `scripts/commands/volume/*` → AppleScript in `scripts/applescripts/volume/*`
 
 ## Command Surface
+
+Application:
+
+- `scripts/commands/application/current-playlist.sh`
+- `scripts/commands/application/current-stream-URL.sh`
+- `scripts/commands/application/current-stream-title.sh`
 
 Library:
 
 - `scripts/commands/library/add-files.sh`
 - `scripts/commands/library/movies.sh`
 - `scripts/commands/library/tv-shows.sh`
+
+Mute:
+
+- `scripts/commands/mute/set.sh`
+
+Playback:
+
+- `scripts/commands/playback/back-track.sh`
+- `scripts/commands/playback/fast-forward.sh`
+- `scripts/commands/playback/next.sh`
+- `scripts/commands/playback/pause.sh`
+- `scripts/commands/playback/play.sh`
+- `scripts/commands/playback/previous.sh`
+- `scripts/commands/playback/resume.sh`
+- `scripts/commands/playback/rewind.sh`
+- `scripts/commands/playback/seek.sh`
+- `scripts/commands/playback/state.sh`
 
 Playlist:
 
@@ -53,6 +80,11 @@ Track:
 - `scripts/commands/track/current.sh`
 - `scripts/commands/track/reveal.sh`
 - `scripts/commands/track/search.sh`
+
+Volume:
+
+- `scripts/commands/volume/get.sh`
+- `scripts/commands/volume/set.sh`
 
 ## Validation
 
